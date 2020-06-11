@@ -1,0 +1,30 @@
+.contact
+  border: 1px solid grey
+  margin: 30px
+  padding: 5px
+  display: flex
+
+  div
+    padding: 10px
+    // flex-basis: auto
+
+
+    &:hover
+      flex-grow: 20
+      background-color: lightgrey
+
+    &:not(:hover)
+      flex-grow: 1
+      background-color: yellow
+
+  #one
+    border: 1px solid red
+
+  #two
+    border: 1px solid blue
+
+  #three
+    border: 1px solid green
+
+
+// https://stackoverflow.com/questions/54270714/grid-element-expand-animations-using-css

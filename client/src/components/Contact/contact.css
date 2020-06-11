@@ -1,0 +1,39 @@
+.contact {
+  border: 1px solid grey;
+  margin: 30px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact div {
+  padding: 10px;
+}
+
+.contact div:hover {
+  -webkit-box-flex: 20;
+      -ms-flex-positive: 20;
+          flex-grow: 20;
+  background-color: lightgrey;
+}
+
+.contact div:not(:hover) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: yellow;
+}
+
+.contact #one {
+  border: 1px solid red;
+}
+
+.contact #two {
+  border: 1px solid blue;
+}
+
+.contact #three {
+  border: 1px solid green;
+}
+/*# sourceMappingURL=contact.css.map */
