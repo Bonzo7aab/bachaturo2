@@ -1,11 +1,23 @@
 nav
   border: 1px solid black
+  background-color: lightgrey
+
+  .navbar_logo
+    width: 100px
 
   ul
     display: flex
+    justify-content: space-evenly
+    font-size: 1.4em
+    
     li
       list-style: none
+      align-self: center
+
       
       a
         text-decoration: none
         color: black
+      
+        &:hover
+          color: red

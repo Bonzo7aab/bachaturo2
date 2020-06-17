@@ -1,35 +1,55 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
+import { AuthContext } from '../firebase/AuthProvider'
+import app from '../firebase/firebase'
+
 import './navbar.css'
+import logo from '../../util/circle.png'
+
+const signOut = () => app.auth().signOut()
 
 const Navbar = () => {
+  const { currentUser } = useContext(AuthContext)
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">HomeIMG</Link>
+          <Link to="/"><img className='navbar_logo' src={logo} alt='logo' /></Link>
         </li>
         <li>
-          <Link to="/contact">News</Link>
+          <Link to="/program">Program</Link>
         </li>
         <li>
-          <Link to="/contact">Artists</Link>
+          <Link to="/artists">Artists</Link>
         </li>
         <li>
-          <Link to="/contact">Program</Link>
+          <Link to="/place">Place</Link>
         </li>
         <li>
-          <Link to="/contact">Place</Link>
+          <Link to="/tickets">Tickets</Link>
         </li>
         <li>
-          <Link to="/contact">tickets</Link>
-        </li>
-        <li>
-          <Link to="/contact">FAQ</Link>
+          <Link to="/faq">FAQ</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+        {currentUser ?
+        <>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
+          <li>
+            <button onClick={() => signOut()}>Logout</button>
+          </li>
+        </>
+        : null }
       </ul>
     </nav>
   )
