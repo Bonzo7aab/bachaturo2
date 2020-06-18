@@ -11,9 +11,24 @@ let validationSchema = Yup.object({
 })
 const initialValues = { email: 'bonzo7aab@gmail.com', password: ''}
 const ErrorDiv = (props) =>  <div className='validate_error'>{props.children}</div>
+
 const onSubmit = values => {
   app.auth().signInWithEmailAndPassword(values.email, values.password)
-    .then(response => console.log(response))
+    .then(({user}) => {
+      const db = app.firestore()
+      db.collection('users').onSnapshot(snapshot => {
+        const data = snapshot.docs[0]
+        console.log(data.data())
+      })
+    })
+    .catch(err => console.log(err.message))
+}
+
+const resetPassword = (e) => {
+  console.log(e.target)
+  // fix email template
+  app.auth().sendPasswordResetEmail('bonzo7aab@gmail.com')
+    .then(res => console.log(res))
     .catch(err => console.log(err.message))
 }
 
@@ -46,6 +61,7 @@ const Login = () => {
               <ErrorMessage name='password' component={ErrorDiv} />  
             </div>
             <button type='submit'>Login</button>
+            <button disabled type='button' onClick={(e) => resetPassword(e)}>Reset password</button>
           </Form>
         </Formik>
     </div>

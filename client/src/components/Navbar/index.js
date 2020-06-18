@@ -34,9 +34,11 @@ const Navbar = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        {!currentUser ?
         <li>
           <Link to="/login">Login</Link>
         </li>
+        : null}
         <li>
           <Link to="/register">Register</Link>
         </li>
