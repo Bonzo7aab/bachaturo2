@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup';
-import app from '../firebase/firebase'
+import {app} from '../../firebase'
 
 import '../Login/login.css'
 

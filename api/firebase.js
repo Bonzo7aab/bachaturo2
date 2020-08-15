@@ -1,8 +1,6 @@
-import * as firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
+const firebase = require('firebase');
 
-const app = firebase.initializeApp({
+firebase.initializeApp({
   apiKey: "AIzaSyA0lJa_h0RJM3qAA84UxarWJusScjxdxa8",
   authDomain: "bachaturo2.firebaseapp.com",
   databaseURL: "https://bachaturo2.firebaseio.com",
@@ -13,4 +11,6 @@ const app = firebase.initializeApp({
   measurementId: "G-5N0SQHT8MZ"
 });
 
-export default app
+const db = firebase.firestore()
+
+module.exports = {db, firebase}
