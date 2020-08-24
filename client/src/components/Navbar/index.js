@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../context/AuthProvider'
 import {app} from '../../firebase'
+import { useTranslation } from 'react-i18next';
 
 import './navbar.css'
 import logo from '../../util/circle.png'
@@ -9,51 +10,63 @@ import logo from '../../util/circle.png'
 const signOut = () => app.auth().signOut()
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+  const [lng, setLng] = useState('en')
   const { currentUser } = useContext(AuthContext)
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+    setLng(lng)
+  };
+
   return (
-    <nav>
+    <nav className='navbar'>
       <ul>
         <li>
-          <Link to="/program">Program</Link>
+          <span className={lng === 'en' ? 'active' : ''} onClick={() => changeLanguage('en')}>English</span>
+          |
+          <span className={lng === 'pl' ? 'active' : ''} onClick={() => changeLanguage('pl')}>Polish</span>
         </li>
         <li>
-          <Link to="/artists">Artists</Link>
+          <Link to="/program">{t('navbar.program')}</Link>
         </li>
         <li>
-          <Link to="/place">Place</Link>
+          <Link to="/artists">{t('navbar.artists')}</Link>
         </li>
         <li>
-          <Link to="/tickets">Tickets</Link>
+          <Link to="/place">{t('navbar.place')}</Link>
         </li>
         <li>
           <Link to="/"><img className='navbar_logo' src={logo} alt='logo' /></Link>
         </li>
         <li>
-          <Link to="/faq">FAQ</Link>
+          <Link to="/tickets">{t('navbar.tickets')}</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/faq">{t('navbar.faq')}</Link>
+        </li>
+        <li>
+          <Link to="/contact">{t('navbar.contact')}</Link>
         </li>
         {!currentUser ?
         <>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login">{t('navbar.login')}</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/register">{t('navbar.register')}</Link>
           </li>
         </>
-        : null}
-        {currentUser ?
+        :
         <>
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">{t('navbar.profile')}</Link>
           </li>
           <li>
-            <button onClick={() => signOut()}>Logout</button>
+            <button onClick={() => signOut()}>{t('navbar.logout')}</button>
           </li>
         </>
-        : null }
+        }
       </ul>
     </nav>
   )

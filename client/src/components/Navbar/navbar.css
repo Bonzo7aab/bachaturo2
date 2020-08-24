@@ -1,35 +1,51 @@
-nav {
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&display=swap");
+.navbar {
   border: 1px solid black;
   background-color: lightgrey;
+  font-family: 'Boogaloo', cursive;
+  padding: 10px 0 !important;
 }
 
-nav .navbar_logo {
+.navbar .navbar_logo {
   width: 100px;
 }
 
-nav ul {
+.navbar ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  font-size: 1.4em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5em;
 }
 
-nav ul li {
+.navbar ul li {
   list-style: none;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  margin: 0 10px;
 }
 
-nav ul li a {
+.navbar ul li a {
   text-decoration: none;
   color: black;
 }
 
-nav ul li a:hover {
+.navbar ul li a:hover {
   color: red;
+}
+
+.navbar ul li:first-child {
+  margin-right: auto;
+}
+
+.navbar ul li:nth-last-child(2) {
+  margin-left: auto;
+}
+
+.active {
+  border-bottom: 1px solid black;
 }
 /*# sourceMappingURL=navbar.css.map */

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Client from '../../Contentful'
 
-
 const Home = () => {
   const [data, setData] = useState([])
 
@@ -13,7 +12,7 @@ const Home = () => {
 
   return (
     <div>
-      Home
+      <h1>Home</h1>
       {data.map(item => (
         <p key={item.fields.name}>{item.fields.name} <b>{item.fields.number}!</b></p>
       ))}
@@ -22,3 +21,5 @@ const Home = () => {
 }
 
 export default Home
+
+// https://www.couteaux-ceccaldi.com/fr/

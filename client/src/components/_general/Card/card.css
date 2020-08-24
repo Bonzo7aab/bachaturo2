@@ -1,0 +1,17 @@
+.card {
+    max-width: 345px;
+    margin: 30px;
+    display: inline-block;
+}
+.image {
+    height: 300px;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid;
+    width: 30%;
+    opacity: .5;
+    margin: 2rem 0 2rem;
+}

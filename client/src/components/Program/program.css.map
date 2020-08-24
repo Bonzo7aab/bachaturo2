@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,UADM,CACN,GAAG,CAAC;EACA,MAAM,EAAE,MAAM;CAAG",
+    "sources": [
+        "program.sass"
+    ],
+    "names": [],
+    "file": "program.css"
+}

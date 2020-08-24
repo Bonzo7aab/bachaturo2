@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,QAFI,CAEJ,OAAO,CAAC;EACJ,OAAO,EAAE,KAAK;CAAG;;AAHzB,AAKI,QALI,CAKJ,SAAS,CAAC;EACN,OAAO,EAAE,IAAI;CAAG;;AANxB,AAQI,QARI,CAQJ,WAAW,CAAC;EACR,gBAAgB,EAAE,qBAAqB;CAAG",
+    "sources": [
+        "artists.sass"
+    ],
+    "names": [],
+    "file": "artists.css"
+}

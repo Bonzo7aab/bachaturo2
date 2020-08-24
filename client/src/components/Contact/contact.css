@@ -2,5 +2,32 @@
   border: 1px solid grey;
   margin: 30px;
   padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact .contact_form {
+  width: 800px;
+}
+
+.contact .contact_form > div {
+  margin: 10px;
+}
+
+.contact .contact_form > div input, .contact .contact_form > div select, .contact .contact_form > div textarea {
+  width: 100%;
+  padding: 8px 14px;
+}
+
+.contact .contact_form > div textarea {
+  height: 200px;
+}
+
+.validate_error {
+  color: red;
 }
 /*# sourceMappingURL=contact.css.map */

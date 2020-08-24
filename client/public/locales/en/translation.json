@@ -1,0 +1,14 @@
+{
+    "navbar": {
+      "program": "Program",
+      "artists": "Artists",
+      "place": "Place",
+      "tickets": "Tickets",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "login": "Login",
+      "profile": "Profile",
+      "register": "Register",
+      "logout": "Logout"
+    }
+  }

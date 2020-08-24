@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,KAAK,EAAE,KAAK;CAAG",
+    "sources": [
+        "faq.sass"
+    ],
+    "names": [],
+    "file": "faq.css"
+}

@@ -1,19 +1,23 @@
-nav
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap')
+  
+.navbar
   border: 1px solid black
   background-color: lightgrey
+  font-family: 'Boogaloo', cursive
+  padding: 10px 0 !important
 
   .navbar_logo
     width: 100px
 
   ul
     display: flex
-    justify-content: space-evenly
-    font-size: 1.4em
+    justify-content: center
+    font-size: 1.5em
     
     li
       list-style: none
       align-self: center
-
+      margin: 0 10px
       
       a
         text-decoration: none
@@ -21,3 +25,12 @@ nav
       
         &:hover
           color: red
+
+    li:first-child
+      margin-right: auto
+
+    li:nth-last-child(2)
+      margin-left: auto
+
+.active
+  border-bottom: 1px solid black

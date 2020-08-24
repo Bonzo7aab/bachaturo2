@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route,  } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { AuthProvider } from './context/AuthProvider'
@@ -27,6 +27,7 @@ const stripePromise = loadStripe('pk_test_3ZviTaqeoMUsKuQX4Z1rThL700v1PMrSXS')
 
 const App = () => {
   return (
+    <Suspense fallback="loading">
     <AuthProvider>
       <TicketProvider>
         <Elements stripe={stripePromise}>
@@ -65,6 +66,7 @@ const App = () => {
         </Elements>
       </TicketProvider>
     </AuthProvider>
+    </Suspense>
   );
 }
 
