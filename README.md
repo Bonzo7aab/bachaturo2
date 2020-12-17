@@ -1,4 +1,4 @@
-# React template with Contentful CMS
+# React template with Contentful CMS and Stripe - unfinished
 
 Please type in console:
 
@@ -8,9 +8,9 @@ npm run dev
 
 ## Implemented: 
 
-- React (Hooks, Router)
+- React (Hooks, Router), i18n
 - react-transition-group (smooth animation between pages)
 - Contentful (required: spaceID and token)
-- Express server
+- Express server, Stripe
 - Sendgrid (required: api key)
 - Normalize.css
